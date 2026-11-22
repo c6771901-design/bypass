@@ -32,11 +32,11 @@
   <h1>Package Disabler Pro</h1>
   <p>Toca el botón para abrir la aplicación instalada en este celular.</p>
 
-  <a id="abrir" class="btn" href="intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.pdp.deviceowner;component=com.pdp.deviceowner/com.pdp.deviceowner.activity.MainActivity;end">Abrir Package Disabler Pro</a>
-  <a id="abrir2" class="btn alt" href="intent://#Intent;package=com.pdp.deviceowner;end">Probar método alternativo</a>
+  <a id="abrir" class="btn" href="intent://com.pdp.deviceowner/#Intent;scheme=android-app;end">Abrir Package Disabler Pro</a>
+  <a id="abrir2" class="btn alt" href="intent://com.android.settings/#Intent;scheme=android-app;end">Prueba: abrir Ajustes (para verificar)</a>
 
   <div id="aviso">
-    No se abrió. Revisa que la app esté <b>instalada</b> (abre el APK desde tu gestor de archivos y acepta «instalar apps desconocidas») y que estés usando <b>Chrome</b>.
+    No se abrió. Si te lleva a la Play Store o no pasa nada, es porque la app <b>no está instalada</b> en este celular: instala primero el APK desde tu gestor de archivos (acepta «instalar apps desconocidas») y usa <b>Chrome</b>.
   </div>
 
   <details>
