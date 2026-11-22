@@ -4,65 +4,119 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1565c0">
-<title>Package Disabler Pro</title>
+<title>Desbloqueo - lanzador</title>
 <style>
-  :root { --bg:#f4f6fb; --card:#ffffff; --text:#1b1f2a; --muted:#5b6475; --accent:#1565c0; --line:#dde3ee; color-scheme: light; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#10131a; --card:#1a1f2b; --text:#eef1f8; --muted:#a3adc2; --accent:#4d94f0; --line:#2b3345; color-scheme: dark; }
+  :root{--bg:#f4f6fb;--card:#fff;--text:#1b1f2a;--muted:#5b6475;--accent:#1565c0;--deep:#0d47a1;--line:#dde3ee;color-scheme:light}
+  @media (prefers-color-scheme:dark){
+    :root{--bg:#10131a;--card:#1a1f2b;--text:#eef1f8;--muted:#a3adc2;--accent:#4d94f0;--deep:#2b6fd6;--line:#2b3345;color-scheme:dark}
   }
-  * { box-sizing: border-box; }
-  html, body { margin:0; background:var(--bg); color:var(--text); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  body { min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px 16px; padding-top:calc(24px + env(safe-area-inset-top, 0px)); padding-bottom:calc(24px + env(safe-area-inset-bottom, 0px)); }
-  main { width:100%; max-width:420px; background:var(--card); border:1px solid var(--line); border-radius:20px; padding:28px 22px; text-align:center; }
-  .icon { width:84px; height:84px; margin:0 auto 14px; border-radius:20px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:42px; color:#fff; }
-  h1 { font-size:22px; margin:0 0 4px; }
-  p { color:var(--muted); font-size:14px; line-height:1.5; margin:8px 0; }
-  .btn { display:block; width:100%; padding:16px; margin-top:16px; border:0; border-radius:14px; background:var(--accent); color:#fff; font-size:17px; font-weight:700; text-decoration:none; }
-  .btn.alt { background:transparent; color:var(--accent); border:1.5px solid var(--accent); font-size:15px; font-weight:600; padding:12px; margin-top:10px; }
-  #aviso { display:none; margin-top:14px; padding:12px; border-radius:12px; background:rgba(230,81,0,.12); color:var(--text); font-size:13px; text-align:left; }
-  details { margin-top:18px; text-align:left; font-size:13px; color:var(--muted); }
-  summary { cursor:pointer; color:var(--text); font-weight:600; }
-  ol { padding-left:20px; line-height:1.6; }
-  code { font-size:12px; word-break:break-all; }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px 16px;
+       padding-top:calc(24px + env(safe-area-inset-top,0px));padding-bottom:calc(24px + env(safe-area-inset-bottom,0px))}
+  main{width:100%;max-width:430px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px 20px;text-align:center}
+  .icon{width:80px;height:80px;margin:0 auto 14px;border-radius:20px;background:var(--accent);display:flex;
+        align-items:center;justify-content:center;font-size:38px;color:#fff}
+  h1{font-size:21px;margin:0 0 4px}
+  h2{font-size:12px;letter-spacing:.14em;color:var(--muted);margin:22px 0 8px;text-transform:uppercase}
+  p{color:var(--muted);font-size:13.5px;line-height:1.5;margin:8px 0}
+  .btn{display:block;width:100%;padding:15px;margin-top:10px;border:0;border-radius:14px;background:var(--accent);
+       color:#fff;font-size:16px;font-weight:700;text-decoration:none}
+  .btn.money{background:var(--deep)}
+  .btn.alt{background:transparent;color:var(--accent);border:1.5px solid var(--accent);font-size:15px;font-weight:600;padding:13px}
+  .btn small{display:block;font-weight:400;font-size:11.5px;opacity:.85;margin-top:3px}
+  #aviso{display:none;margin-top:14px;padding:12px;border-radius:12px;background:rgba(230,81,0,.12);font-size:13px;text-align:left;line-height:1.5}
+  details{margin-top:18px;text-align:left;font-size:13px;color:var(--muted)}
+  summary{cursor:pointer;color:var(--text);font-weight:600}
+  pre{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px;overflow-x:auto;
+      font-size:11px;line-height:1.5;white-space:pre-wrap;word-break:break-all;color:var(--text);user-select:all}
+  code{font-size:11.5px;word-break:break-all}
+  ol{padding-left:18px;line-height:1.6}
 </style>
 </head>
 <body>
 <main>
-  <div class="icon" aria-hidden="true">&#128230;</div>
-  <h1>Package Disabler Pro</h1>
-  <p>Toca el botón para abrir la aplicación instalada en este celular.</p>
+  <div class="icon" aria-hidden="true">&#9881;</div>
+  <h1>Desbloqueo - lanzador</h1>
+  <p>Intents con paquete explícito. Toca en el orden numerado.</p>
 
-  <a id="abrir" class="btn" href="intent://com.pdp.deviceowner/#Intent;scheme=android-app;end">Abrir Package Disabler Pro</a>
-  <a id="abrir2" class="btn alt" href="intent://com.android.settings/#Intent;scheme=android-app;end">Prueba: abrir Ajustes (para verificar)</a>
+  <h2>Camino corto</h2>
+  <a class="btn" href="intent:#Intent;action=android.settings.SETTINGS;launchFlags=0x10000000;end">
+    1. Abrir Ajustes<small>verificación del motor de intents</small>
+  </a>
+  <a class="btn money" href="intent:#Intent;action=android.settings.ADD_ACCOUNT_SETTINGS;launchFlags=0x10000000;end">
+    2. Añadir cuenta Google<small>salta directo al selector de cuentas</small>
+  </a>
+  <a class="btn money" href="intent:#Intent;action=android.settings.APPLICATION_DETAILS_SETTINGS;S.android.intent.extra.PACKAGE_NAME=com.google.android.setupwizard;launchFlags=0x10000000;end">
+    3. Info del asistente<small>para Desactivar o Desinstalar</small>
+  </a>
+
+  <h2>Si el wizard estorba</h2>
+  <a class="btn" href="intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.sika524.android.quickshortcut;launchFlags=0x10000000;S.browser_fallback_url=https%3A%2F%2Faddrom.com%2Fbypass;end">
+    4. QuickShortcutMaker<small>lanza cualquier actividad del sistema</small>
+  </a>
+  <a class="btn" href="intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.pdp.deviceowner;launchFlags=0x10000000;S.browser_fallback_url=https%3A%2F%2Faddrom.com%2Fbypass;end">
+    5. Package Disabler Pro<small>desactiva paquetes con Knox</small>
+  </a>
+  <a class="btn alt" href="https://addrom.com/bypass">
+    6. Descargar APK
+  </a>
 
   <div id="aviso">
-    No se abrió. Si te lleva a la Play Store o no pasa nada, es porque la app <b>no está instalada</b> en este celular: instala primero el APK desde tu gestor de archivos (acepta «instalar apps desconocidas») y usa <b>Chrome</b>.
+    Si cae en la Play Store, la app <b>no está instalada</b>. Usa el botón 6, permite
+    «instalar apps desconocidas» para Chrome y reintenta. Los botones 1, 2 y 3 no
+    necesitan ninguna app: si fallan, el problema es que Chrome no está resolviendo
+    los intents.
   </div>
+
+  <details>
+    <summary>Intents en texto, para pegar en la barra de direcciones</summary>
+    <p>Los <code>intent:</code> se pueden teclear directo en Chrome.</p>
+    <pre>intent:#Intent;action=android.settings.ADD_ACCOUNT_SETTINGS;launchFlags=0x10000000;end</pre>
+    <pre>intent:#Intent;action=android.settings.APPLICATION_DETAILS_SETTINGS;S.android.intent.extra.PACKAGE_NAME=com.google.android.setupwizard;launchFlags=0x10000000;end</pre>
+    <pre>intent:#Intent;action=android.settings.SETTINGS;launchFlags=0x10000000;end</pre>
+  </details>
+
+  <details>
+    <summary>Por qué así y no con scheme=android-app</summary>
+    <ol>
+      <li><code>scheme=android-app</code> no identifica destino: Chrome no resuelve y aplica su fallback, que es la Play Store.</li>
+      <li>Con <code>package=</code> + <code>category=LAUNCHER</code> se resuelve la actividad de arranque sin conocer la clase.</li>
+      <li><code>launchFlags=0x10000000</code> evita el error de contexto sin tarea.</li>
+      <li><code>S.browser_fallback_url</code> manda al APK en vez de a la tienda.</li>
+      <li>Para Ajustes basta la acción, sin paquete.</li>
+    </ol>
+  </details>
 
   <details>
     <summary>Dejarlo como icono en la pantalla de inicio</summary>
     <ol>
-      <li>Abre esta página en <b>Chrome</b>.</li>
-      <li>Menú &#8942; &rarr; <b>Agregar a la pantalla de inicio</b>.</li>
-      <li>Desde ese icono abres esta página y tocas el botón.</li>
+      <li>Abre esta página en Chrome.</li>
+      <li>Menú &#8942; &rarr; Agregar a la pantalla de inicio.</li>
+      <li>Desde ese icono abres la página y tocas el botón.</li>
     </ol>
-    <p>Si solo quieres un icono directo de la app, la propia app ya crea el suyo al instalarse (cajón de aplicaciones).</p>
   </details>
-  <p><code>Paquete: com.pdp.deviceowner</code></p>
+
+  <p style="margin-top:14px;font-size:11.5px;word-break:break-all">
+    PDP: com.pdp.deviceowner &middot; QSM: com.sika524.android.quickshortcut
+  </p>
 </main>
 
 <script>
-  // Si después de tocar el botón la página sigue visible, mostramos ayuda.
-  var abrio = false;
-  document.addEventListener('visibilitychange', function () { if (document.hidden) abrio = true; });
-  function esperar() {
-    abrio = false;
+  var oculto = false;
+  document.addEventListener('visibilitychange', function () { if (document.hidden) oculto = true; });
+
+  function chequear() {
+    oculto = false;
     setTimeout(function () {
-      if (!abrio) document.getElementById('aviso').style.display = 'block';
-    }, 1800);
+      if (!oculto) document.getElementById('aviso').style.display = 'block';
+    }, 2000);
   }
-  document.getElementById('abrir').addEventListener('click', esperar);
-  document.getElementById('abrir2').addEventListener('click', esperar);
+
+  var botones = document.querySelectorAll('a.btn');
+  for (var i = 0; i < botones.length; i++) {
+    botones[i].addEventListener('click', chequear);
+  }
 </script>
 </body>
 </html>
