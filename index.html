@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1565c0">
+<title>Package Disabler Pro</title>
+<style>
+  :root { --bg:#f4f6fb; --card:#ffffff; --text:#1b1f2a; --muted:#5b6475; --accent:#1565c0; --line:#dde3ee; color-scheme: light; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#10131a; --card:#1a1f2b; --text:#eef1f8; --muted:#a3adc2; --accent:#4d94f0; --line:#2b3345; color-scheme: dark; }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; background:var(--bg); color:var(--text); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  body { min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px 16px; padding-top:calc(24px + env(safe-area-inset-top, 0px)); padding-bottom:calc(24px + env(safe-area-inset-bottom, 0px)); }
+  main { width:100%; max-width:420px; background:var(--card); border:1px solid var(--line); border-radius:20px; padding:28px 22px; text-align:center; }
+  .icon { width:84px; height:84px; margin:0 auto 14px; border-radius:20px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-size:42px; color:#fff; }
+  h1 { font-size:22px; margin:0 0 4px; }
+  p { color:var(--muted); font-size:14px; line-height:1.5; margin:8px 0; }
+  .btn { display:block; width:100%; padding:16px; margin-top:16px; border:0; border-radius:14px; background:var(--accent); color:#fff; font-size:17px; font-weight:700; text-decoration:none; }
+  .btn.alt { background:transparent; color:var(--accent); border:1.5px solid var(--accent); font-size:15px; font-weight:600; padding:12px; margin-top:10px; }
+  #aviso { display:none; margin-top:14px; padding:12px; border-radius:12px; background:rgba(230,81,0,.12); color:var(--text); font-size:13px; text-align:left; }
+  details { margin-top:18px; text-align:left; font-size:13px; color:var(--muted); }
+  summary { cursor:pointer; color:var(--text); font-weight:600; }
+  ol { padding-left:20px; line-height:1.6; }
+  code { font-size:12px; word-break:break-all; }
+</style>
+</head>
+<body>
+<main>
+  <div class="icon" aria-hidden="true">&#128230;</div>
+  <h1>Package Disabler Pro</h1>
+  <p>Toca el botón para abrir la aplicación instalada en este celular.</p>
+
+  <a id="abrir" class="btn" href="intent:#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.pdp.deviceowner;component=com.pdp.deviceowner/com.pdp.deviceowner.activity.MainActivity;end">Abrir Package Disabler Pro</a>
+  <a id="abrir2" class="btn alt" href="intent://#Intent;package=com.pdp.deviceowner;end">Probar método alternativo</a>
+
+  <div id="aviso">
+    No se abrió. Revisa que la app esté <b>instalada</b> (abre el APK desde tu gestor de archivos y acepta «instalar apps desconocidas») y que estés usando <b>Chrome</b>.
+  </div>
+
+  <details>
+    <summary>Dejarlo como icono en la pantalla de inicio</summary>
+    <ol>
+      <li>Abre esta página en <b>Chrome</b>.</li>
+      <li>Menú &#8942; &rarr; <b>Agregar a la pantalla de inicio</b>.</li>
+      <li>Desde ese icono abres esta página y tocas el botón.</li>
+    </ol>
+    <p>Si solo quieres un icono directo de la app, la propia app ya crea el suyo al instalarse (cajón de aplicaciones).</p>
+  </details>
+  <p><code>Paquete: com.pdp.deviceowner</code></p>
+</main>
+
+<script>
+  // Si después de tocar el botón la página sigue visible, mostramos ayuda.
+  var abrio = false;
+  document.addEventListener('visibilitychange', function () { if (document.hidden) abrio = true; });
+  function esperar() {
+    abrio = false;
+    setTimeout(function () {
+      if (!abrio) document.getElementById('aviso').style.display = 'block';
+    }, 1800);
+  }
+  document.getElementById('abrir').addEventListener('click', esperar);
+  document.getElementById('abrir2').addEventListener('click', esperar);
+</script>
+</body>
+</html>
